@@ -1,0 +1,98 @@
+Model: "model"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+ t (InputLayer)                 [(None, 1)]          0           []                               
+                                                                                                  
+ D5b (Dense)                    (None, 5)            10          ['t[0][0]']                      
+                                                                                                  
+ sci_activation (SciActivation)  (None, 5)           0           ['D5b[0][0]']                    
+                                                                                                  
+ D5b_2 (Dense)                  (None, 5)            30          ['sci_activation[0][0]']         
+                                                                                                  
+ sci_activation_1 (SciActivatio  (None, 5)           0           ['D5b_2[0][0]']                  
+ n)                                                                                               
+                                                                                                  
+ D5b_3 (Dense)                  (None, 5)            30          ['sci_activation_1[0][0]']       
+                                                                                                  
+ div (Lambda)                   (None, 1)            0           ['t[0][0]']                      
+                                                                                                  
+ sci_activation_2 (SciActivatio  (None, 5)           0           ['D5b_3[0][0]']                  
+ n)                                                                                               
+                                                                                                  
+ tanh (Lambda)                  (None, 1)            0           ['div[0][0]']                    
+                                                                                                  
+ x (Field)                      (None, 1)            6           ['sci_activation_2[0][0]']       
+                                                                                                  
+ div_2 (Lambda)                 (None, 1)            0           ['t[0][0]']                      
+                                                                                                  
+ mul (Lambda)                   (None, 1)            0           ['tanh[0][0]',                   
+                                                                  'x[0][0]']                      
+                                                                                                  
+ tanh_2 (Lambda)                (None, 1)            0           ['div_2[0][0]']                  
+                                                                                                  
+ y (Field)                      (None, 1)            6           ['sci_activation_2[0][0]']       
+                                                                                                  
+ add (Lambda)                   (None, 1)            0           ['mul[0][0]']                    
+                                                                                                  
+ mul_2 (Lambda)                 (None, 1)            0           ['tanh_2[0][0]',                 
+                                                                  'y[0][0]']                      
+                                                                                                  
+ a1 (ParameterBase)             (1,)                 1           ['t[0][0]']                      
+                                                                                                  
+ b1 (ParameterBase)             (1,)                 1           ['t[0][0]']                      
+                                                                                                  
+ add_2 (Lambda)                 (None, 1)            0           ['mul_2[0][0]']                  
+                                                                                                  
+ mul_3 (Lambda)                 (None, 1)            0           ['a1[0][0]',                     
+                                                                  'add[0][0]']                    
+                                                                                                  
+ a2 (ParameterBase)             (1,)                 1           ['t[0][0]']                      
+                                                                                                  
+ mul_7 (Lambda)                 (None, 1)            0           ['b1[0][0]',                     
+                                                                  'add[0][0]']                    
+                                                                                                  
+ b2 (ParameterBase)             (1,)                 1           ['t[0][0]']                      
+                                                                                                  
+ rsub (Lambda)                  (None, 1)            0           ['mul_3[0][0]']                  
+                                                                                                  
+ mul_4 (Lambda)                 (None, 1)            0           ['a2[0][0]',                     
+                                                                  'add_2[0][0]']                  
+                                                                                                  
+ r (ParameterBase)              (1,)                 1           ['t[0][0]']                      
+                                                                                                  
+ rsub_2 (Lambda)                (None, 1)            0           ['mul_7[0][0]']                  
+                                                                                                  
+ mul_8 (Lambda)                 (None, 1)            0           ['b2[0][0]',                     
+                                                                  'add_2[0][0]']                  
+                                                                                                  
+ sub (Lambda)                   (None, 1)            0           ['rsub[0][0]',                   
+                                                                  'mul_4[0][0]']                  
+                                                                                                  
+ mul_6 (Lambda)                 (None, 1)            0           ['r[0][0]',                      
+                                                                  'add_2[0][0]']                  
+                                                                                                  
+ sub_3 (Lambda)                 (None, 1)            0           ['rsub_2[0][0]',                 
+                                                                  'mul_8[0][0]']                  
+                                                                                                  
+ Grad_ (Lambda)                 (None, 1)            0           ['add[0][0]']                    
+                                                                                                  
+ mul_5 (Lambda)                 (None, 1)            0           ['add[0][0]',                    
+                                                                  'sub[0][0]']                    
+                                                                                                  
+ Grad__2 (Lambda)               (None, 1)            0           ['add_2[0][0]']                  
+                                                                                                  
+ mul_9 (Lambda)                 (None, 1)            0           ['mul_6[0][0]',                  
+                                                                  'sub_3[0][0]']                  
+                                                                                                  
+ sub_2 (Lambda)                 (None, 1)            0           ['Grad_[0][0]',                  
+                                                                  'mul_5[0][0]']                  
+                                                                                                  
+ sub_4 (Lambda)                 (None, 1)            0           ['Grad__2[0][0]',                
+                                                                  'mul_9[0][0]']                  
+                                                                                                  
+==================================================================================================
+Total params: 87
+Trainable params: 87
+Non-trainable params: 0
+__________________________________________________________________________________________________

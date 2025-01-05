@@ -1,0 +1,26 @@
+run: test
+domain: <class 'fbpinns.domains.RectangularDomainND'>
+domain_init_kwargs: {'xmin': array([0.]), 'xmax': array([24.])}
+problem: <class '__main__.CompetitionModel'>
+problem_init_kwargs: {'params': [0.5, 0.3, 0.6, 0.7, 0.3], 'u0': 2, 'v0': 1}
+decomposition: <class 'fbpinns.decompositions.RectangularDecompositionND'>
+decomposition_init_kwargs: {'subdomain_xs': [array([ 5. , 13.5, 20.5])], 'subdomain_ws': [array([10.005, 10.5  , 10.5  ])], 'unnorm': (0.0, 1.0)}
+network: <class 'fbpinns.networks.FCN'>
+network_init_kwargs: {'layer_sizes': [1, 5, 5, 5, 2]}
+n_steps: 30000
+scheduler: <class 'fbpinns.schedulers.AllActiveSchedulerND'>
+scheduler_kwargs: {}
+ns: ((20,),)
+n_test: (20,)
+sampler: grid
+optimiser: <function adam at 0x000001F3B7F256C0>
+optimiser_kwargs: {'learning_rate': 0.001}
+seed: 0
+summary_freq: 1000
+test_freq: 1000
+model_save_freq: 10000
+show_figures: True
+save_figures: False
+clear_output: True
+hostname: ts
+skip_plot_at_first: False

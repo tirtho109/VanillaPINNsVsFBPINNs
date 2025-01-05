@@ -1,0 +1,26 @@
+run: FBPINN_coexistence_10_24
+domain: <class 'fbpinns.domains.RectangularDomainND'>
+domain_init_kwargs: {'xmin': array([0]), 'xmax': array([24])}
+problem: <class 'FBPINNsModel.problems.CompetitionModel'>
+problem_init_kwargs: {'params': [0.5, 0.7, 0.3, 0.3, 0.6], 'u0': 2, 'v0': 1, 'sd': 0.1, 'time_limit': [10, 24], 'numx': 100, 'lambda_phy': 1.0, 'lambda_data': 1.0, 'lambda_param': 1000000.0, 'sparse': [True], 'noise_level': 0.05}
+decomposition: <class 'fbpinns.decompositions.RectangularDecompositionND'>
+decomposition_init_kwargs: {'subdomain_xs': [array([ 5., 17.])], 'subdomain_ws': [array([10.005, 26.6  ])], 'unnorm': (0.0, 1.0)}
+network: <class 'fbpinns.networks.FCN'>
+network_init_kwargs: {'layer_sizes': [1, 5, 5, 5, 2]}
+n_steps: 50000
+scheduler: <class 'fbpinns.schedulers.AllActiveSchedulerND'>
+scheduler_kwargs: {}
+ns: ((200,),)
+n_test: (500,)
+sampler: grid
+optimiser: <function adam at 0x0000016F21ACDA80>
+optimiser_kwargs: {'learning_rate': 0.001}
+seed: 0
+summary_freq: 1000
+test_freq: 1000
+model_save_freq: 10000
+show_figures: False
+save_figures: True
+clear_output: True
+hostname: ts
+skip_plot_at_first: False

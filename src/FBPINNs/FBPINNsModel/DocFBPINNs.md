@@ -1,0 +1,1 @@
+# Don't use same number of point and same number of domain decomposition. It gives error.
